@@ -2,7 +2,6 @@ import io
 import random
 import time
 import copy
-import numpy
 
 
 class Cell:

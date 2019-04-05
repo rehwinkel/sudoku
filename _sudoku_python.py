@@ -164,6 +164,7 @@ def generate_sudoku(clues):
     remove = 81 - clues
     s = Sudoku()
     s.fill()
+    solution = [x.value for row in s.board.values for x in row]
 
     removed = 0
     while removed < remove:
@@ -179,7 +180,7 @@ def generate_sudoku(clues):
             s.board[x, y].value = v
         else:
             removed += 1
-    return [x.value for row in s.board.values for x in row]
+    return [x.value for row in s.board.values for x in row], solution
 
 def _chunks(l, n):
     n = max(1, n)
